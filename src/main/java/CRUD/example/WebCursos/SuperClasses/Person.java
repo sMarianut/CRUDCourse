@@ -13,5 +13,6 @@ public class Person {
     private String email;
     private String password;
     private Role role;
+    private String UserCode;
 
 }

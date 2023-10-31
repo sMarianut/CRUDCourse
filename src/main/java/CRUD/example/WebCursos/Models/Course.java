@@ -1,5 +1,7 @@
 package CRUD.example.WebCursos.Models;
 
+import CRUD.example.WebCursos.Enums.Payment;
+import CRUD.example.WebCursos.Enums.PaymentMethod;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -17,6 +19,6 @@ public class Course {
     private String description;
     private boolean status;
     private Payment payment;
+    private PaymentMethod paymentMethod;
     private String studyPlan;
-
 }
