@@ -1,4 +1,4 @@
-package CRUD.example.WebCursos.Enums;
+package CRUD.example.WebCursos.enums;
 
 public enum Payment {
     PAY,
