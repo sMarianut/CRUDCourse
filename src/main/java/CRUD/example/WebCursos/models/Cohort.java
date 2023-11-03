@@ -1,16 +1,21 @@
 package CRUD.example.WebCursos.models;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
-@Data
+
+@Getter
+@Setter
 @NoArgsConstructor
+@Entity
+@Table(name = "cohorts_tbl")
 public class Cohort {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private boolean status;
@@ -22,10 +27,11 @@ public class Cohort {
     private Student student;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
-
-    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     private Course course;
+
+    public Cohort(boolean status, int initialAmount) {
+        this.status = status;
+        this.initialAmount = initialAmount;
+    }
 }
